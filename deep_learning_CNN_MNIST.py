@@ -55,3 +55,10 @@ cnn_model.add(Dense( num_classes,activation='softmax' ))
 
 # print a summary of the model
 cnn_model.summary()
+
+# compile the model using
+# a. Optimizer: gradient descent  with a learning rate of 0.1
+# b. Loss function: sparse_categorical_crossentropy 
+# c. Metrics: accuracy
+opt = SGD(learning_rate=0.1)
+cnn_model.compile(optimizer = opt, loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
