@@ -62,3 +62,7 @@ cnn_model.summary()
 # c. Metrics: accuracy
 opt = SGD(learning_rate=0.1)
 cnn_model.compile(optimizer = opt, loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
+
+# fit the model to training data
+cnn_model.fit(X_train, y_train, epochs = 10, verbose = 1)
+ 
