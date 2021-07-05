@@ -37,3 +37,21 @@ num_pixels = X_train.shape[1]
 # determine number of classes
 num_classes = 10
 
+# define a deep neural network model using the sequential model API
+# Layer 0: input layer specifying the dimension of each sample
+# Layer 1: 2D convolution layer with 32 filters, each filter of dimension 3x3, using ReLU activation function
+# Layer 2: 2D max pooling layer with filter dimension of 2 x 2
+# Layer 3: Flatten the images into a column vector
+# Layer 4: Fully connected NN layer with n = 100 nodes, g = ReLU
+# Layer 5: Fully connected NN layer with n = num_classes nodes, g = softmax
+
+cnn_model = Sequential()
+cnn_model.add(Input(shape=(28, 28, 1)))
+cnn_model.add(Conv2D( 32, (3, 3), activation='relu'))
+cnn_model.add(MaxPooling2D((2, 2)))
+cnn_model.add(Flatten())
+cnn_model.add(Dense( 100, activation='relu' ))
+cnn_model.add(Dense( num_classes,activation='softmax' ))
+
+# print a summary of the model
+cnn_model.summary()
