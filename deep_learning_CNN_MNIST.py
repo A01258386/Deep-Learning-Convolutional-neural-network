@@ -6,3 +6,6 @@ from tensorflow.keras.layers import Dense,Conv2D,MaxPooling2D,Flatten
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.datasets import mnist
 
+
+# load MNIST dataset
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
