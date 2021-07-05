@@ -66,3 +66,6 @@ cnn_model.compile(optimizer = opt, loss = 'sparse_categorical_crossentropy', met
 # fit the model to training data
 cnn_model.fit(X_train, y_train, epochs = 10, verbose = 1)
  
+ # evaluate the model on the test data
+loss, acc = cnn_model.evaluate(X_test, y_test, verbose = 1)
+print('Test accuracy = %.3f' % acc)
