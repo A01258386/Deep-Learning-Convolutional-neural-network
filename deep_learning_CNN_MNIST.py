@@ -27,3 +27,13 @@ print('X_test.shape:', X_test.shape)
 X_train = X_train.astype('float32') / 255.0
 X_test = X_test.astype('float32') / 255.0
 
+
+print('X_train range: ', np.min(X_train), ', ', np.max(X_train))
+print('X_test range: ', np.min(X_test), ', ', np.max(X_test))
+
+# determine number of pixels in an input image
+num_pixels = X_train.shape[1]
+
+# determine number of classes
+num_classes = 10
+
