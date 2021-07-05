@@ -19,3 +19,11 @@ print('X_test.shape:', X_test.shape)
 X_train = X_train.reshape([X_train.shape[0], X_train.shape[1], X_train.shape[2], 1])
 X_test = X_test.reshape([X_test.shape[0], X_test.shape[1], X_test.shape[2], 1])
 
+print('X_train.shape:', X_train.shape)
+print('X_test.shape:', X_test.shape)
+
+# convert the pixel values from integer to float32 and 
+# normalize the pixel values from the range of 0-255 to 0-1
+X_train = X_train.astype('float32') / 255.0
+X_test = X_test.astype('float32') / 255.0
+
